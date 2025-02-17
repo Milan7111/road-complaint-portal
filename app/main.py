@@ -1,6 +1,10 @@
 from fastapi import FastAPI
+from routes.auth import router as auth_router  # Import your auth routes
 
 app = FastAPI()
+
+# Include authentication routes
+app.include_router(auth_router)
 
 @app.get("/")
 def read_root():
